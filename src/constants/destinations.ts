@@ -40,7 +40,7 @@ export const destinations: Destination[] = [
   {
     id: 3,
     title: "Shangarh",
-    location: "Andaman / September 2025",
+    location: "Himachal / August 2025",
     description:
       "Beyond the tourist hotspots lie secluded islands with pristine beaches. Kayak through mangrove forests, dive in crystal-clear waters with vibrant marine life, and camp under the stars on uninhabited shores.",
     image:
