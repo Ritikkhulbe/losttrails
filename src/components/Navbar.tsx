@@ -44,7 +44,7 @@ const Navbar = () => {
                         <NavigationMenuLink asChild>
                           <a
                             className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-green-500/50 to-green-700/50 p-6 no-underline outline-none focus:shadow-md relative overflow-hidden"
-                            href={whatsappLinkLostTrails}
+                            href="/lost-trails-journeys"
                           >
                             <Image
                               src="/images/cover.png"
