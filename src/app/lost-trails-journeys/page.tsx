@@ -14,10 +14,10 @@ export default function LostTrailsJourneys() {
   };
 
   const handleDownloadPDF = (journeyType: string) => {
-    const pdfPath = `/pdfs/${journeyType.toLowerCase().replace(/\s+/g, '-')}-info.pdf`;
+    const pdfPath = `/pdfs/${journeyType.toLowerCase().replace(/\s+/g, '-')}.pdf`;
     const link = document.createElement('a');
     link.href = pdfPath;
-    link.download = `${journeyType} - Complete Info.pdf`;
+    link.download = `${journeyType}.pdf`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -152,7 +152,7 @@ export default function LostTrailsJourneys() {
                   </ul>
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Button 
-                      onClick={() => handleDownloadPDF("Filmmaking Bootcamp")}
+                      onClick={() => handleDownloadPDF("filmmaking")}
                       variant="outline"
                       className="flex items-center gap-2"
                     >
@@ -193,7 +193,7 @@ export default function LostTrailsJourneys() {
                   </ul>
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Button 
-                      onClick={() => handleDownloadPDF("Pathways to Soul")}
+                      onClick={() => handleDownloadPDF("shojalosttrails")}
                       variant="outline"
                       className="flex items-center gap-2"
                     >
@@ -234,7 +234,7 @@ export default function LostTrailsJourneys() {
                   </ul>
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Button 
-                      onClick={() => handleDownloadPDF("Social Media Detox")}
+                      onClick={() => handleDownloadPDF("socialmediadetox")}
                       variant="outline"
                       className="flex items-center gap-2"
                     >

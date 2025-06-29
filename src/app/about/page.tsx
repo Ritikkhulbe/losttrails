@@ -21,8 +21,8 @@ export default function About() {
           </div>
 
           {/* Our Story */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
-            <div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-3">
+            <div className="order-2 md:order-1">
               <h2 className="text-3xl font-bold mb-4">Our Story</h2>
               <p className="text-lg text-gray-400 mb-4">
                 Lost Trails was born from a simple realization: some of the most extraordinary places in our country remain hidden from the common traveler's path.
@@ -34,7 +34,7 @@ export default function About() {
                 Since 2018, we've been carefully curating small-group expeditions that balance adventure with sustainability, immersion with respect, and discovery with preservation.
               </p>
             </div>
-            <div className="relative h-[400px] rounded-lg overflow-hidden">
+            <div className="relative h-[400px] rounded-lg overflow-hidden order-1 md:order-2">
               <Image
                 src="https://images.unsplash.com/photo-1527942222795-4c32a0836ff0?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb"
                 alt="Explorers sitting around a campfire"
@@ -45,7 +45,7 @@ export default function About() {
           </div>
 
           {/* Our Values */}
-          <div className="bg-background text-foreground transition-colors py-16 px-8 rounded-xl mb-20">
+          <div className="bg-background text-foreground transition-colors py-16 px-8 rounded-xl ">
             <h2 className="text-3xl font-bold mb-8 text-center">Our Values</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="border p-6 rounded-lg shadow-sm">
@@ -72,54 +72,66 @@ export default function About() {
           {/* The Team */}
           <div className="mb-20">
             <h2 className="text-3xl font-bold mb-8 text-center">Meet Our Team</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
               <div className="text-center">
                 <div className="relative w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden">
                   <Image
-                    src="https://randomuser.me/api/portraits/men/45.jpg"
-                    alt="Vikram Mehta"
+                    src="/people/lakshya.jpeg"
+                    alt="Lakshya Singh"
                     fill
                     style={{ objectFit: "cover" }}
                   />
                 </div>
-                <h3 className="text-xl font-bold">Vikram Mehta</h3>
-                <p className="text-gray-600">Founder & Lead Explorer</p>
+                <h3 className="text-xl font-bold">Lakshya Singh</h3>
+                <p className="text-gray-600">On ground alchemist</p>
               </div>
               <div className="text-center">
                 <div className="relative w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden">
                   <Image
-                    src="https://randomuser.me/api/portraits/women/45.jpg"
-                    alt="Anjali Trivedi"
+                    src="/people/aditya.jpeg"
+                    alt="Aditya Sharma"
                     fill
                     style={{ objectFit: "cover" }}
                   />
                 </div>
-                <h3 className="text-xl font-bold">Anjali Trivedi</h3>
-                <p className="text-gray-600">Expedition Curator</p>
+                <h3 className="text-xl font-bold">Aditya Sharma</h3>
+                <p className="text-gray-600">On ground alchemist</p>
               </div>
               <div className="text-center">
                 <div className="relative w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden">
                   <Image
-                    src="https://randomuser.me/api/portraits/men/36.jpg"
-                    alt="Rahul Sharma"
+                    src="/people/yashshankar.jpeg"
+                    alt="Yash Shankar"
                     fill
                     style={{ objectFit: "cover" }}
                   />
                 </div>
-                <h3 className="text-xl font-bold">Rahul Sharma</h3>
-                <p className="text-gray-600">Local Experience Expert</p>
+                <h3 className="text-xl font-bold">Yash Shankar</h3>
+                <p className="text-gray-600">Cheif Hustle Officer</p>
               </div>
               <div className="text-center">
                 <div className="relative w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden">
                   <Image
-                    src="https://randomuser.me/api/portraits/women/36.jpg"
-                    alt="Priya Kapoor"
+                    src="/people/Ritik.jpeg"
+                    alt="Ritik Khulbe"
                     fill
                     style={{ objectFit: "cover" }}
                   />
                 </div>
-                <h3 className="text-xl font-bold">Priya Kapoor</h3>
-                <p className="text-gray-600">Sustainability Director</p>
+                <h3 className="text-xl font-bold">Ritik Khulbe</h3>
+                <p className="text-gray-600">Head of getting heads</p>
+              </div>
+              <div className="text-center">
+                <div className="relative w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden">
+                  <Image
+                    src="/people/Vedita.jpeg"
+                    alt="Vedita Saraswat"
+                    fill
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
+                <h3 className="text-xl font-bold">Vedita Saraswat</h3>
+                <p className="text-gray-600">Head of all thins cool</p>
               </div>
             </div>
           </div>
