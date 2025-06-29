@@ -25,19 +25,19 @@ export default function LostTrailsJourneys() {
 
   const journeyImages = [
     {
-      src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      src: "/images/filmmaking.jpeg",
       alt: "Filmmaking bootcamp in nature",
       title: "Filmmaking Bootcamp",
       description: "Capture stories in the wilderness"
     },
     {
-      src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      src: "/images/yoga.jpeg",
       alt: "Pathways to soul journey",
       title: "Pathways to Soul",
       description: "Inner exploration in nature's embrace"
     },
     {
-      src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      src: "/images/socialmedia.jpeg",
       alt: "Social media detox retreat",
       title: "Social Media Detox",
       description: "Disconnect to reconnect with yourself"
@@ -61,7 +61,7 @@ export default function LostTrailsJourneys() {
           <div className="max-w-6xl mx-auto mb-16">
             {/* Mobile Hero - Text over Image */}
             <div className="lg:hidden">
-              <div className="relative h-[600px] rounded-lg overflow-hidden">
+              <div className="relative h-[700px] rounded-lg overflow-hidden">
                 <Image
                   src="/images/cover.png"
                   alt="Lost Trails Journeys"
@@ -97,13 +97,13 @@ export default function LostTrailsJourneys() {
             {/* Desktop Hero - Side by Side */}
             <div className="hidden lg:grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-6">
+                <h1 className="text-3xl md:text-5xl font-bold mb-6">
                   Lost Trails Journeys
                 </h1>
-                <p className="text-xl text-gray-400 mb-8">
+                <p className="text-lg text-gray-400 mb-8">
                   Curated journeys to the most breathtaking unexplored places. Experience transformative adventures that go beyond typical travel — from filmmaking bootcamps in the wilderness to soul-searching retreats in the mountains.
                 </p>
-                <p className="text-lg text-gray-400 mb-8">
+                <p className="text-base text-gray-400 mb-8">
                   Whether you're seeking creative inspiration, spiritual growth, or a digital detox, our journeys are designed to reconnect you with nature and yourself.
                 </p>
                 <Button 
@@ -133,7 +133,7 @@ export default function LostTrailsJourneys() {
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 <div className="relative h-64 lg:h-full">
                   <Image
-                    src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                    src="/images/filmmaking.jpeg"
                     alt="Filmmaking Bootcamp"
                     fill
                     style={{ objectFit: "cover" }}
@@ -174,7 +174,7 @@ export default function LostTrailsJourneys() {
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 <div className="relative h-64 lg:h-full lg:order-2">
                   <Image
-                    src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                    src="/images/yoga.jpeg"
                     alt="Pathways to Soul"
                     fill
                     style={{ objectFit: "cover" }}
@@ -215,7 +215,7 @@ export default function LostTrailsJourneys() {
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 <div className="relative h-64 lg:h-full">
                   <Image
-                    src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                    src="/images/socialmedia.jpeg"
                     alt="Social Media Detox"
                     fill
                     style={{ objectFit: "cover" }}
@@ -333,7 +333,7 @@ export default function LostTrailsJourneys() {
           </div>
 
           {/* Call to Action Section */}
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-6xl mx-auto text-center">
             <div className="bg-primary/10 border-2 rounded-xl p-12">
               <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Life?</h2>
               <p className="text-xl text-gray-400 mb-8">
@@ -348,7 +348,7 @@ export default function LostTrailsJourneys() {
               </p>
               <Button 
                 onClick={handleWhatsAppClick}
-                className="text-lg px-8 py-4 bg-green-600 hover:bg-green-700"
+                className="text-lg px-8 py-4 bg-green-600 hover:bg-green-700 text-wrap h-auto"
               >
                 📱 Start Your Journey Today
               </Button>

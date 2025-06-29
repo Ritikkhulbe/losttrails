@@ -16,6 +16,12 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./ui/Theme-toggle";
 import Image from "next/image";
@@ -133,13 +139,45 @@ const Navbar = () => {
               </SheetTrigger>
               <SheetContent>
                 <div className="flex flex-col space-y-4 mt-8">
-                  <Link
-                    href="/experiences"
-                    className="text-lg font-medium"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Experiences
-                  </Link>
+                  <Accordion type="single" collapsible>
+                    <AccordionItem value="experiences" className="border-none">
+                      <AccordionTrigger className="text-lg font-medium py-2 hover:no-underline">
+                        Experiences
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <div className="flex flex-col space-y-3 pl-4">
+                          <Link
+                            href="/lost-trails-journeys"
+                            className="text-base font-medium hover:text-primary"
+                            onClick={() => setIsOpen(false)}
+                          >
+                            Lost Trails Journeys
+                          </Link>
+                          <Link
+                            href={whatsappLinkCorporate}
+                            className="text-base font-medium hover:text-primary"
+                            onClick={() => setIsOpen(false)}
+                          >
+                            Offbeat Corporate
+                          </Link>
+                          <Link
+                            href="/destinations"
+                            className="text-base font-medium hover:text-primary"
+                            onClick={() => setIsOpen(false)}
+                          >
+                            Curated Trips
+                          </Link>
+                          <Link
+                            href={whatsappLinkCustom}
+                            className="text-base font-medium hover:text-primary"
+                            onClick={() => setIsOpen(false)}
+                          >
+                            Custom Experiences
+                          </Link>
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
                   <Link
                     href="/destinations"
                     className="text-lg font-medium"

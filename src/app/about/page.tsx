@@ -36,7 +36,7 @@ export default function About() {
             </div>
             <div className="relative h-[400px] rounded-lg overflow-hidden order-1 md:order-2">
               <Image
-                src="https://images.unsplash.com/photo-1527942222795-4c32a0836ff0?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb"
+                src="/people/team.jpeg"
                 alt="Explorers sitting around a campfire"
                 fill
                 style={{ objectFit: "cover" }}
@@ -119,19 +119,19 @@ export default function About() {
                   />
                 </div>
                 <h3 className="text-xl font-bold">Ritik Khulbe</h3>
-                <p className="text-gray-600">Head of getting heads</p>
+                <p className="text-gray-600">Off-ground alchemist</p>
               </div>
               <div className="text-center">
                 <div className="relative w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden">
                   <Image
-                    src="/people/Vedita.jpeg"
+                    src="/people/vedita.jpeg"
                     alt="Vedita Saraswat"
                     fill
                     style={{ objectFit: "cover" }}
                   />
                 </div>
                 <h3 className="text-xl font-bold">Vedita Saraswat</h3>
-                <p className="text-gray-600">Head of all thins cool</p>
+                <p className="text-gray-600">Head of all things cool</p>
               </div>
             </div>
           </div>

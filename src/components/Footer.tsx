@@ -67,7 +67,7 @@ const Footer = () => {
                   href="mailto:hello@losttrails.in"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  hello@losttrails.in
+                  business.losttrails@gmail.com
                 </a>
               </li>
               <li>
