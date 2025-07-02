@@ -35,7 +35,7 @@ const HeroSection = () => {
               size="lg"
               className="bg-transparent border-white text-white hover:bg-white/20 text-md"
             >
-              <Link href="/experiences">Explore Journeys</Link>
+              <Link href="/destinations">Explore Journeys</Link>
             </Button>
           </div>
         </motion.div>

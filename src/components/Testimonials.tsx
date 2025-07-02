@@ -2,81 +2,96 @@
 
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import Image from "next/image";
+import { useState, useEffect } from "react";
 
 const testimonials = [
   {
-    id: "explorer",
-    title: "Explorers",
-    testimonials: [
-      {
-        id: 1,
-        name: "Akshay Sharma",
-        title: "Wildlife Photographer",
-        quote:
-          "Lost Trails took me to places I couldn't even find on a map. I captured photos of bird species that ornithologists rarely get to see. The local expertise and off-the-beaten-path experiences are unmatched.",
-        image: "https://randomuser.me/api/portraits/men/32.jpg",
-      },
-      {
-        id: 2,
-        name: "Meera Patel",
-        title: "Adventure Enthusiast",
-        quote:
-          "I've traveled extensively, but Lost Trails showed me a side of my own country I never knew existed. From sleeping under star-filled skies in the desert to breaking bread with tribal families, every moment was authentic and transformative.",
-        image: "https://randomuser.me/api/portraits/women/44.jpg",
-      },
-    ],
+    id: 1,
+    name: "Tanishq Tiwari",
+    title: "Software Engineer",
+    quote:
+      "I joined the Filmmaking Retreat in Himachal without knowing what to expect  and it turned out to be the most creatively fulfilling trip I've had. The group was small and everyone was so passionate. From brainstorming to shooting in the middle of pine forests, every day felt like a scene from a film. Legends of Lost Trails was such a fun and unexpected highlight. It felt like a close-knit film camp in the mountains.",
   },
   {
-    id: "creators",
-    title: "Content Creators",
-    testimonials: [
-      {
-        id: 3,
-        name: "Rohit Mishra",
-        title: "Travel Blogger & Photographer",
-        quote:
-          "As a content creator, I'm always looking for unique stories. Lost Trails delivered beyond my expectations. Their journeys aren't manufactured experiences—they're real adventures with real people in truly remote places. My followers couldn't believe these places exist in our country.",
-        image: "https://randomuser.me/api/portraits/men/38.jpg",
-      },
-      {
-        id: 4,
-        name: "Aisha Khan",
-        title: "Documentary Filmmaker",
-        quote:
-          "The connections Lost Trails has with local communities gave me unprecedented access to stories and traditions that would have taken months to discover on my own. My documentary on indigenous fishing techniques wouldn't have been possible without their expertise.",
-        image: "https://randomuser.me/api/portraits/women/46.jpg",
-      },
-    ],
+    id: 2,
+    name: "Priyansh Goswami",
+    title: "Filmmaker",
+    quote:
+      "What stood out for me was how immersive everything was. We weren't just handed cameras and asked to shoot  we were guided, challenged, and pushed to go deeper with our stories. The group dynamic was great and the hosts made sure no one felt left out. And yes, Legends of Lost Trails was a mad storytelling ride  probably my favourite part!",
   },
   {
-    id: "researchers",
-    title: "Researchers",
-    testimonials: [
-      {
-        id: 5,
-        name: "Dr. Vikram Singh",
-        title: "Ethnobotanist",
-        quote:
-          "My research on traditional plant medicine advanced years ahead thanks to Lost Trails. They connected me with knowledge keepers who shared healing practices that haven't been documented. The team's respect for both scientific inquiry and traditional knowledge is remarkable.",
-        image: "https://randomuser.me/api/portraits/men/22.jpg",
-      },
-      {
-        id: 6,
-        name: "Dr. Priya Nair",
-        title: "Cultural Anthropologist",
-        quote:
-          "Lost Trails facilitated my fieldwork in areas that typically don't welcome outsiders. Their relationships with communities and ethical approach to cultural exchange created trust that would have taken me years to build on my own.",
-        image: "https://randomuser.me/api/portraits/women/26.jpg",
-      },
-    ],
+    id: 3,
+    name: "Harshul Thareja",
+    title: "Marine Biologist",
+    quote:
+      "This retreat gave me the courage to start creating again. It wasn't just about film — it was about connection. Every activity helped break the ice and bring people together. Legends of Lost Trails was such a wholesome game, full of laughter and depth. So grateful to have found this space.",
+  },
+  {
+    id: 4,
+    name: "Gargi Singh",
+    title: "Fashion Designer",
+    quote:
+      "The yoga retreat was exactly what I needed. A space to pause, reflect, and move with intention. The energy of the group was so grounding, and the hosts truly made everyone feel safe and welcome. Legends of Lost Trails turned into this magical evening where strangers became friends. I left feeling stronger  both physically and emotionally.",
+  },
+  {
+    id: 5,
+    name: "Dr. Vikram Singh",
+    title: "Surgeon",
+    quote:
+      "It was a retreat that actually felt like a retreat. Mornings began with mindful movement and breathwork, and the rest of the day was a beautiful mix of introspection, laughter, and nature. The group size made it feel personal, not overwhelming. Legends of Lost Trails was the perfect mix of fun and vulnerability.",
+  },
+  {
+    id: 6,
+    name: "Shaesta Irshad",
+    title: "Lawyer",
+    quote:
+      "What I loved most was the intention behind everything. Nothing felt rushed or forced. The yoga sessions, the mountain air, the safe conversations  it all flowed naturally. Legends of Lost Trails was such a unique way to open up and bond. I left with a full heart and quiet mind.",
   },
 ];
 
 const Testimonials = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  // Auto-advance slides every 5 seconds
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % Math.ceil(testimonials.length / 3));
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [isAutoPlaying]);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % Math.ceil(testimonials.length / 3));
+    setIsAutoPlaying(false);
+    setTimeout(() => setIsAutoPlaying(true), 10000); // Resume auto-play after 10 seconds
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => 
+      prev === 0 ? Math.ceil(testimonials.length / 3) - 1 : prev - 1
+    );
+    setIsAutoPlaying(false);
+    setTimeout(() => setIsAutoPlaying(true), 10000); // Resume auto-play after 10 seconds
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+    setIsAutoPlaying(false);
+    setTimeout(() => setIsAutoPlaying(true), 10000); // Resume auto-play after 10 seconds
+  };
+
+  // Get testimonials for current slide (3 for desktop, 1 for mobile)
+  const getCurrentTestimonials = () => {
+    const startIndex = currentSlide * 3;
+    return testimonials.slice(startIndex, startIndex + 3);
+  };
+
   return (
-    <section className="py-20  bg-background text-foreground transition-colors">
+    <section className="py-20 bg-background text-foreground transition-colors">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -94,58 +109,94 @@ const Testimonials = () => {
           </p>
         </motion.div>
 
-        <Tabs defaultValue="explorer" className="max-w-4xl mx-auto">
-          <TabsList className="grid w-full grid-cols-3 mb-8">
-            {testimonials.map((group) => (
-              <TabsTrigger
-                key={group.id}
-                value={group.id}
-                className="text-sm md:text-base"
-              >
-                {group.title}
-              </TabsTrigger>
-            ))}
-          </TabsList>
-
-          {testimonials.map((group) => (
-            <TabsContent key={group.id} value={group.id}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {group.testimonials.map((testimonial, index) => (
-                  <motion.div
-                    key={testimonial.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                  >
-                    <Card className="h-full">
-                      <CardContent className="pt-6">
-                        <div className="flex items-center mb-4">
-                          <div className="relative w-12 h-12 mr-4 overflow-hidden rounded-full">
-                            <Image
-                              src={testimonial.image}
-                              alt={testimonial.name}
-                              fill
-                              style={{ objectFit: "cover" }}
-                            />
-                          </div>
-                          <div>
-                            <h4 className="font-medium">{testimonial.name}</h4>
-                            <p className="text-sm text-gray-500">
-                              {testimonial.title}
-                            </p>
-                          </div>
-                        </div>
-                        <p className="italic text-gray-700">
-                          "{testimonial.quote}"
+        <div className="max-w-6xl mx-auto relative">
+          {/* Desktop View - 3 testimonials */}
+          <div className="hidden md:block">
+            <div className="grid grid-cols-3 gap-8">
+              {getCurrentTestimonials().map((testimonial, index) => (
+                <motion.div
+                  key={testimonial.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <Card className="h-full hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
+                    <CardContent className="p-8 relative">
+                      <div className="absolute top-4 right-4 text-4xl text-gray-200 font-serif">"</div>
+                      <div className="mb-6">
+                        <h4 className="font-semibold text-lg mb-1">{testimonial.name}</h4>
+                        <p className="text-sm text-muted-foreground font-medium">
+                          {testimonial.title}
                         </p>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                ))}
-              </div>
-            </TabsContent>
-          ))}
-        </Tabs>
+                      </div>
+                      <p className="text-gray-700 leading-relaxed text-base mt-4">
+                        {testimonial.quote}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Mobile View - 1 testimonial */}
+          <div className="md:hidden">
+            <div className="relative">
+              <motion.div
+                key={currentSlide}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <Card className="h-full hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
+                  <CardContent className="p-8 relative">
+                    <div className="absolute top-4 right-4 text-4xl text-gray-200 font-serif">"</div>
+                    <div className="mb-6">
+                      <h4 className="font-semibold text-lg mb-1">{testimonials[currentSlide].name}</h4>
+                      <p className="text-sm text-muted-foreground font-medium">
+                        {testimonials[currentSlide].title}
+                      </p>
+                    </div>
+                    <p className="text-gray-700 leading-relaxed text-base mt-4">
+                      {testimonials[currentSlide].quote}
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            </div>
+          </div>
+
+          {/* Navigation Arrows */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-3 rounded-full hover:bg-black/70 transition-colors z-10"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button
+            onClick={nextSlide}
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-3 rounded-full hover:bg-black/70 transition-colors z-10"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
+          {/* Dots Indicator */}
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+            {Array.from({ length: Math.ceil(testimonials.length / 3) }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-3 h-3 rounded-full transition-colors ${
+                  index === currentSlide ? 'bg-black' : 'bg-black/30'
+                }`}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

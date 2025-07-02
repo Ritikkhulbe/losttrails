@@ -5,8 +5,11 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { destinations } from "@/constants";
+import { useTheme } from "next-themes";
 
 const FeaturedDestinations = () => {
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
   return (
     <section className="py-16 bg-background text-foreground transition-colors">
       <div className="container mx-auto px-4">
@@ -45,7 +48,7 @@ const FeaturedDestinations = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="location-card group overflow-hidden rounded-lg shadow-lg"
+              className={`location-card group overflow-hidden rounded-lg shadow-lg ${isDark ? "bg-gray-800" : "bg-white"}`}
             >
               <div className="relative aspect-[4/3]">
                 <Image
@@ -60,8 +63,8 @@ const FeaturedDestinations = () => {
                   <p className="text-sm text-gray-200">{destination.location}</p>
                 </div>
               </div>
-              <div className="p-5 bg-white">
-                <p className="text-gray-700 mb-4">{destination.description}</p>
+              <div className={`p-5 ${isDark ? "bg-gray-800" : "bg-white"}`}>
+                <p className={`${isDark ? "text-gray-200" : "text-gray-700"} mb-4`}>{destination.description}</p>
                 <Button asChild variant="outline" className="w-full">
                   <Link href={destination.link}>See Details</Link>
                 </Button>

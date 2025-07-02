@@ -45,7 +45,7 @@ const CtaSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <Button asChild size="lg" className="text-md">
               <Link href="/request-invite">Request Your Invite</Link>
@@ -54,7 +54,7 @@ const CtaSection = () => {
               asChild
               variant="outline"
               size="lg"
-              className="bg-transparent border-white text-white hover:bg-white/20 text-md"
+              className="bg-transparent border hover:bg-white/20 text-md "
             >
               <Link href="/about">Learn About Us</Link>
             </Button>

@@ -15,22 +15,22 @@ export default function JibhiDestination() {
 
   const galleryImages = [
     {
-      src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-      alt: "Pine forests of Jibhi",
-      title: "Pine Forests",
-      description: "Dense pine forests surrounding the valley"
+      src: "/images/jibhi1.jpeg",
+      alt: "Jibhi Sunrise",
+      title: "Amazing Sunrise views",
+      description: "Experience the sunrise at Jibhi"
     },
     {
-      src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-      alt: "Tirthan Valley views",
-      title: "Valley Views",
-      description: "Breathtaking views of Tirthan Valley"
+      src: "/images/jibhi2.jpeg",
+      alt: "Clear Sky and Mountains",
+      title: "Clear Sky and Mountains",
+      description: "Experience the clear sky and mountainss"
     },
     {
-      src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-      alt: "Cozy wooden homes",
-      title: "Wooden Homes",
-      description: "Cozy wooden homestays with valley stories"
+      src: "/images/jibhi3.jpeg",
+      alt: "Jibhi Sunset",
+      title: "Sunset at Jibhi",
+      description: "Experience the sunset at Jibhi"
     }
   ];
 

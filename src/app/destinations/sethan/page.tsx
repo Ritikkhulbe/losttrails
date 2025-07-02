@@ -15,22 +15,22 @@ export default function SethanDestination() {
 
   const galleryImages = [
     {
-      src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      src: "/images/sethan1.jpeg",
       alt: "Snow-capped peaks of Sethan",
       title: "Snow-Capped Peaks",
-      description: "Pir Panjal range embracing the village"
+      description: "Experience the snow-capped peaks of Sethan"
     },
     {
-      src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      src: "/images/sethan2.jpeg",
       alt: "Peaceful Buddhist hamlet",
       title: "Buddhist Hamlet",
-      description: "Peaceful village above Manali"
+      description: "Peaceful beauty of Sethan"
     },
     {
-      src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      src: "/images/sethan3.jpeg",
       alt: "Camping under the stars",
-      title: "Starry Nights",
-      description: "Camping in the lap of the mountains"
+      title: "Path to soul ",
+      description: "Experience the starry nights at Sethan"
     }
   ];
 

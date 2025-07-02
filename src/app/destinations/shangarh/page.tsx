@@ -15,19 +15,19 @@ export default function ShangarhDestination() {
 
   const galleryImages = [
     {
-      src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      src: "/images/shangarh1.jpeg",
       alt: "Shangarh meadows",
       title: "Vast Meadows",
       description: "Nature's amphitheater in the mountains"
     },
     {
-      src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      src: "/images/shangarh2.jpeg",
       alt: "Hidden forest trails",
-      title: "Forest Trails",
-      description: "Winding paths through pine groves"
+      title: "Trek Trails",
+      description: "Amazing infrastructure"
     },
     {
-      src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      src: "/images/shangarh3.jpeg",
       alt: "Cozy mountain stays",
       title: "Mountain Stays",
       description: "Warm wooden homes with stunning views"
