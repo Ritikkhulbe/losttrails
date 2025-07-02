@@ -52,28 +52,49 @@ const testimonials = [
 const Testimonials = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check if mobile on mount and resize
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Auto-advance slides every 5 seconds
   useEffect(() => {
     if (!isAutoPlaying) return;
 
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % Math.ceil(testimonials.length / 3));
+      setCurrentSlide((prev) => {
+        // For mobile: cycle through all testimonials (1 per slide)
+        // For desktop: cycle through groups of 3
+        const maxSlides = isMobile ? testimonials.length : Math.ceil(testimonials.length / 3);
+        return (prev + 1) % maxSlides;
+      });
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [isAutoPlaying]);
+  }, [isAutoPlaying, isMobile]);
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % Math.ceil(testimonials.length / 3));
+    setCurrentSlide((prev) => {
+      const maxSlides = isMobile ? testimonials.length : Math.ceil(testimonials.length / 3);
+      return (prev + 1) % maxSlides;
+    });
     setIsAutoPlaying(false);
     setTimeout(() => setIsAutoPlaying(true), 10000); // Resume auto-play after 10 seconds
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => 
-      prev === 0 ? Math.ceil(testimonials.length / 3) - 1 : prev - 1
-    );
+    setCurrentSlide((prev) => {
+      const maxSlides = isMobile ? testimonials.length : Math.ceil(testimonials.length / 3);
+      return prev === 0 ? maxSlides - 1 : prev - 1;
+    });
     setIsAutoPlaying(false);
     setTimeout(() => setIsAutoPlaying(true), 10000); // Resume auto-play after 10 seconds
   };
@@ -88,6 +109,11 @@ const Testimonials = () => {
   const getCurrentTestimonials = () => {
     const startIndex = currentSlide * 3;
     return testimonials.slice(startIndex, startIndex + 3);
+  };
+
+  // Get total slides for mobile (1 testimonial per slide)
+  const getMobileSlides = () => {
+    return testimonials.length;
   };
 
   return (
@@ -186,7 +212,7 @@ const Testimonials = () => {
 
           {/* Dots Indicator */}
           <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-            {Array.from({ length: Math.ceil(testimonials.length / 3) }).map((_, index) => (
+            {Array.from({ length: isMobile ? testimonials.length : Math.ceil(testimonials.length / 3) }).map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
